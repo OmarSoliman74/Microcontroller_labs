@@ -1,0 +1,31 @@
+#include <LiquidCrystal.h>
+
+// Initialize the LCD
+LiquidCrystal lcd(12, 11, 5, 4, 3, 2);
+
+// Define custom character for sad face emoji
+byte sad[8] = {
+  B00000,
+  B10001,
+  B00000,
+  B00000,
+  B01110,
+  B10001,
+  B00000,
+};
+
+void setup() {
+  // Set up the LCD columns and rows
+  lcd.begin(16, 2);
+
+  // Create the sad face custom character
+  lcd.createChar(0, sad);
+
+  // Display the sad face at position (0, 0)
+  lcd.setCursor(0, 0);
+  lcd.write(byte(0));
+}
+
+void loop() {
+  // No need for further actions in this example
+}
